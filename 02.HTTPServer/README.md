@@ -25,7 +25,7 @@ func HandleFunc(pattern string, handler func(ResponseWriter, *Request))
 
 Handle(pattern string, handler Handler)
 ```
-首先在参数上，第二个参数有区别：Handle的 Handler 是一个接口，而 HandleFunc的 handler 是 Func  ------ Handler 实际调用就是 func(ResponseWriter, *Request) 函数类型
+首先在参数上，第二个参数有区别：Handle的 http.Handler 是一个接口，而 HandleFunc的 handler 是 Func  -- Handler 实际调用就是 func(ResponseWriter, *Request) 函数类型
 
 
 既然知道了 Handle的第二参数是个接口，那我们怎么模拟一个像 HandleFunc 一样的调用的呢？
